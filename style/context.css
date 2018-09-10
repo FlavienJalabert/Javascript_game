@@ -1,6 +1,5 @@
-#context{height:76%}
 #graphical div canvas{
-	cursor: ;
+	cursor: default;
 }
 #graphical div div{ /*fps listener */
 	position:fixed;

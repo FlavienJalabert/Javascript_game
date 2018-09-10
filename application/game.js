@@ -70,37 +70,6 @@ function init() {
 	stats = new Stats();
 	container.appendChild( stats.domElement );
 	//
-	window.addEventListener( 'resize', onWindowResize, false );
-	document.addEventListener( 'keydown', onKeyDown, false );
-}
-//
-function onKeyDown ( event ) {
-	switch( event.keyCode ) {
-		case 79: /*O*/
-			activeCamera = cameraOrtho;
-			activeHelper = cameraOrthoHelper;
-			break;
-		case 80: /*P*/
-			activeCamera = cameraPerspective;
-			activeHelper = cameraPerspectiveHelper;
-			break;
-	}
-}
-//
-function onWindowResize( event ) {
-	SCREEN_WIDTH = 500;
-	SCREEN_HEIGHT = window.innerHeight*.64;
-	aspect = SCREEN_WIDTH / SCREEN_HEIGHT;
-	renderer.setSize( SCREEN_WIDTH, SCREEN_HEIGHT );
-	camera.aspect = 0.5 * aspect;
-	camera.updateProjectionMatrix();
-	cameraPerspective.aspect = 0.5 * aspect;
-	cameraPerspective.updateProjectionMatrix();
-	cameraOrtho.left   = - 0.5 * frustumSize * aspect / 2;
-	cameraOrtho.right  =   0.5 * frustumSize * aspect / 2;
-	cameraOrtho.top    =   frustumSize / 2;
-	cameraOrtho.bottom = - frustumSize / 2;
-	cameraOrtho.updateProjectionMatrix();
 }
 //
 function animate() {

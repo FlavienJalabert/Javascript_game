@@ -59,21 +59,33 @@
 		<button id='upgrade'>upgrade &#11145;<br>$<i></i></button>
 	</div>
 	<div id='popup' style='display:none;'>
-		<div id='popupContainer'>
+		<div class='popupContainer' id='collectPopup'>
 			<span>you earned</span><br>
 			<span>$</span><span id='earning'></span><br>
 			<span>this run</span><br><br>
 			<button id='collect'><span>collect $</span><i></i></button>
 			<br><span style='font-size:16px'>or</span><br>
-			<button id='doubleCollect'><span>&#10070; 5</span><br><span>double &#x2BC8; $</span><i></i></button>
+			<button id='collectDouble'><span>&#10070; 5</span><br><span>double &#x2BC8; $</span><i></i></button>
 		</div>
+		<div class='popupContainer' id='settingsPopup'>
+			<div class='close'>&times;</div>
+		</div>
+		<div class='popupContainer' id='challengesPopup'>
+			<div class='close'>&times;</div>
+		</div>
+		<div class='popupContainer' id='shopPopup'>
+			<div class='close'>&times;</div>
+		</div>
+		
 	</div>
 	</div>
 	<script src='application/game.js'></script>
+	<script src='application/actions.js'></script>
 	<script>
 		init();
 		document.getElementById('loading').style.display="none";
 		animate();
+		actions();
 		// .innerHTML='&#'+(10121+n).toString()+';';
 	</script>
 </body>
