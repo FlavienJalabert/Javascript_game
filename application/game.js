@@ -1,5 +1,5 @@
 var SCREEN_WIDTH = 500;
-var SCREEN_HEIGHT = window.innerHeight*.74;
+var SCREEN_HEIGHT = window.innerHeight*.753;
 var aspect = SCREEN_WIDTH / SCREEN_HEIGHT;
 var container, stats;
 var camera, scene, renderer, mesh;
@@ -88,8 +88,8 @@ function onKeyDown ( event ) {
 }
 //
 function onWindowResize( event ) {
-	SCREEN_WIDTH = window.innerWidth;
-	SCREEN_HEIGHT = window.innerHeight;
+	SCREEN_WIDTH = 500;
+	SCREEN_HEIGHT = window.innerHeight*.64;
 	aspect = SCREEN_WIDTH / SCREEN_HEIGHT;
 	renderer.setSize( SCREEN_WIDTH, SCREEN_HEIGHT );
 	camera.aspect = 0.5 * aspect;

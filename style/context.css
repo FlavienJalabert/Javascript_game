@@ -1,0 +1,9 @@
+#context{height:76%}
+#graphical div canvas{
+	cursor: ;
+}
+#graphical div div{ /*fps listener */
+	position:fixed;
+	top:13%;
+	right:23%;
+}

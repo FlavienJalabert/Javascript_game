@@ -2,8 +2,11 @@
 <head>
 	<title>Paf, la bouboule</title>
 	<meta charset='UTF-8'>
+	<link rel='icon'type='image/png'  href='img/favicon.png'>
+	<link rel='stylesheet' type='text/css' href='style/window.css'>
 	<link rel='stylesheet' type='text/css' href='style/style.css'>
 	<link rel='stylesheet' type='text/css' href='style/loading.css'>
+	<link rel='stylesheet' type='text/css' href='style/context.css'>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/96/three.min.js'></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js'></script>
 </head>
@@ -11,25 +14,25 @@
 	<div id='container'>
 	<div id='top'>
 		<div id='currency'>
-			<span id='diamonds'>&#10070;<i>100</i></span>
-			<p id='money'>$<i>0</i></p>
+			<span id='diamonds'>&#10070;<i></i></span>
+			<p id='money'>$<i></i></p>
 		</div>
 		<div id='progressBar'>
 			<span id='zero'>0</span>
 			<progress id='animationProgress' max='1' value='0'></progress>
-			<span id='progressObjective'>100</span>
+			<span id='progressObjective'></span>
 		</div>
 		<div id='progressLabels'>
 			<span id='progressLabel'><i>0</i>m</span>
 			<span id='progressRecord'>&#9819;<i>0</i>m</span>
 		</div>
-		<span id='objective'>reach <i>100</i> meters to level up</span>
+		<span id='objective'>reach <i></i> meters to level up</span>
 		<div id='topButtons'>
 			<button id='settings'>&#9881;</button>
 			<button id='challenges'>&#10004;</button>
 			<button id='skins'>&#9998;</button>
 			<button id='shop'>&#x1f6d2;</button>
-			<span id='buttonNotification' style='display:none;'>&#10122;</span>
+			<span id='buttonNotification' style='display:none;'>&#10125;</span>
 		</div>
 	</div>
 	<div id='context'>
@@ -44,20 +47,26 @@
 	<div id='bot'>
 		<div id='botButtons'>
 			<button id='strength'>&#x1f5f2;</button>
-			<button id='speed' style='background:url(img/races.svg) no-repeat center'></button>
-			<button id='bounciness' style='z-index:1;transform:rotate(-90deg)'>&#9735;</button>
+			<button id='speed'></button>
+			<button id='bounciness'>&#9735;</button>
 			<button id='income'>&#x1f4c8;</button>
 		</div>
-		<span id='title'></span><span id='level'></span>
-		<span id='desc'><i id='actualProgression'></i></span>
-		<button id='upgrade'>upgrade &#10162;<br>$<i></i></button>
+		<div id='statProgression'>
+			<span id='title'></span><span> </span><span id='level'></span>
+			<br>
+			<span id='desc'><i id='actualProgression'></i></span>
+		</div>
+		<button id='upgrade'>upgrade &#11145;<br>$<i></i></button>
 	</div>
-	<div id='popup' style='display:block;'>
-		<span>you earned</span>
-		<span id='earning'></span>
-		<span>this run</span>
-		<button id='collect'></button>
-		<button id='doubleCollect'></button>
+	<div id='popup' style='display:none;'>
+		<div id='popupContainer'>
+			<span>you earned</span><br>
+			<span>$</span><span id='earning'></span><br>
+			<span>this run</span><br><br>
+			<button id='collect'><span>collect $</span><i></i></button>
+			<br><span style='font-size:16px'>or</span><br>
+			<button id='doubleCollect'><span>&#10070; 5</span><br><span>double &#x2BC8; $</span><i></i></button>
+		</div>
 	</div>
 	</div>
 	<script src='application/game.js'></script>
@@ -65,6 +74,7 @@
 		init();
 		document.getElementById('loading').style.display="none";
 		animate();
+		// .innerHTML='&#'+(10121+n).toString()+';';
 	</script>
 </body>
 </html>

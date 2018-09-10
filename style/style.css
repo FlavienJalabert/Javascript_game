@@ -4,7 +4,8 @@ html{
 	font-family:arial;
 }
 body{
-	padding:2px 0;
+	margin:0;
+	padding:4px 0;
 }
 i{
 	font-style:normal;
@@ -20,12 +21,6 @@ i{
 	height:12%;
 	border-radius:50%/10%;
 }
-#bot{
-	height:12%;
-	border-radius:50%/10%;
-}
-#context{height:76%}
-
 #currency{
 	margin-bottom:5px;
 }
@@ -116,23 +111,133 @@ progress{
 	text-align:center;
 }
 #topButtons{
-	margin-top:5px;
+	margin-top:2px;
 	text-align:center;
 	letter-spacing:60px;
 }
 #topButtons button{
 	border:none;
-	background-color:#2b2b2b;
-	color:#ccc;
+	background-color:#0c8;
+	color:#fff;
 	border-radius:10%/15%;
 	width:15%;
 	height:25px;
+	font-size:18px;
 }
-#graphical{
-	
+#buttonNotification{
+	width:15px;
+	height:15px;
+	color:#80c;
+	position:absolute;
 }
+
+#bot{
+	height:12%;
+	border-radius:50%/10%;
+}
+#botButtons{
+	margin:auto;
+	text-align:center;
+	letter-spacing:60px;
+	width:100%;
+	border-bottom:3px solid;
+	border-color:#f25;
+}
+#botButtons button{
+	border:none;
+	color:#fff;
+	border-radius:10%/15%;
+	width:15%;
+	height:25px;
+	vertical-align:middle;
+	font-size:18px;
+}
+#strength{
+	background-color:#f25;
+}
+#speed{
+	background:url(../img/races.svg) no-repeat center;
+	background-color:#25f;
+}
+#bounciness{
+	transform:scale(-1,1);
+	background-color:#5f2;
+	z-index:0;
+}
+#income{
+	background-color:#ffd700;
+}
+#statProgression{
+	padding-top:10px;
+	color:#565656;
+	width:65%;
+	display:inline-block;
+	height:60px;
+	text-align:center;
+	line-height:25px;
+}
+#title{
+	color:#2b2b2b;
+	vertical-align:middle;
+}
+#level{
+	font-weight:bold;
+	color:#2b2b2b;
+	vertical-align:middle;
+}
+#desc{
+	vertical-align:middle;
+}
+#upgrade{
+	margin-left:20px;
+	display:inline-block;
+	border:none;
+	vertical-align:middle;
+	height:60px;
+	color:#f2f3f4;
+	background-color:#f25;
+}
+#popup{
+	position:fixed;
+	width:250px;
+	height:30%;
+	margin:0 125px;
+	z-index:5;
+	top:30%;
+	border-radius:10px;
+	background-color:#f2f3f4;
+	transition:1s ease-in-out;
+}
+#popupContainer{
+	height:90%;
+	margin:5% 5px;
+	font-size:25px;
+	text-align:center;
+	color:#565656;
+	line-height:32px;
+}
+#earning{
+	font-size:30px;
+	color:#2b2b2b;
+	font-weight:bold;
+}
+#collect, #doubleCollect{
+	border:none;
+	padding:12px 0;
+	border-radius:5px;
+	width:60%;
+}
+#collect{
+	background-color:#0c8;
+	color:#f2f3f4;
+}
+#doubleCollect{
+	background-color:#80c;
+	color:#f2f3f4;
+}
+
 /*
-body{font-size:10px;margin:0}
+		body{font-size:10px;margin:0}
 		.container{width:1024px;margin:auto;margin-top:15px}
 		.clear{clear:both}
 
