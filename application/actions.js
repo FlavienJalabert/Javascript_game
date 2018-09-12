@@ -2,9 +2,9 @@ function actions(){
 	window.addEventListener('keydown',onKeyPress);
 	window.addEventListener('resize',onWindowResize);
 	// display popups
-	document.getElementById('settings').addEventListener('click',settings);
-	document.getElementById('challenges').addEventListener('click',challenges);
-	document.getElementById('shop').addEventListener('click',shop);
+	document.getElementById('settings').addEventListener('click',openSettings);
+	document.getElementById('challenges').addEventListener('click',openChallenges);
+	document.getElementById('shop').addEventListener('click',openShop);
 	// turn camera to see character
 	document.getElementById('skins').addEventListener('click',skins);
 	// change bot appearance and value
@@ -37,7 +37,7 @@ function onKeyPress(e){
 		
 	}
 }
-function onWindowResize(e) {
+function onWindowResize(e){
 	SCREEN_WIDTH=500;
 	SCREEN_HEIGHT=window.innerHeight*.753;
 	aspect=SCREEN_WIDTH/SCREEN_HEIGHT;
@@ -56,21 +56,21 @@ function closeTab(e){
 	e.path[1].style.display='none';
 	document.getElementById('popup').style.display='none';
 }
-function settings(e){
+function openSettings(e){
 	document.getElementById('popup').style.display='block';
 	document.getElementById('collectPopup').style.display='none';
 	document.getElementById('settingsPopup').style.display='block';
 	document.getElementById('challengesPopup').style.display='none';
 	document.getElementById('shopPopup').style.display='none';
 }
-function challenges(e){
+function openChallenges(e){
 	document.getElementById('popup').style.display='block';
 	document.getElementById('collectPopup').style.display='none';
 	document.getElementById('settingsPopup').style.display='none';
 	document.getElementById('challengesPopup').style.display='block';
 	document.getElementById('shopPopup').style.display='none';
 }
-function shop(e){
+function openShop(e){
 	document.getElementById('popup').style.display='block';
 	document.getElementById('collectPopup').style.display='none';
 	document.getElementById('settingsPopup').style.display='none';
@@ -80,23 +80,43 @@ function shop(e){
 function strength(e){
 	document.getElementById('botButtons').style.borderColor='#f25';
 	document.getElementById('upgrade').style.backgroundColor='#f25';
-	
+	document.getElementById('title').innerHTML='Strength';
+	document.getElementById('level').innerHTML='Lvl '+Game.Strength.Level;
+	document.getElementById('desc').innerHTML='Your strength is increased by <i>'+Game.Strength.Grade+'</i>%';
+	document.getElementById('upgrade').getElementsByTagName('i')[0].innerHTML=Game.Strength.UpCost;
 }
 function speed(e){
 	document.getElementById('botButtons').style.borderColor='#25f';
 	document.getElementById('upgrade').style.backgroundColor='#25f';
-	
+	document.getElementById('title').innerHTML='Speed';
+	document.getElementById('level').innerHTML='Lvl '+Game.Speed.Level;
+	document.getElementById('desc').innerHTML='Your speed is increased by <i>'+Game.Speed.Grade+'</i>%';
+	document.getElementById('upgrade').getElementsByTagName('i')[0].innerHTML=Game.Speed.UpCost;
 }
 function bounciness(e){
 	document.getElementById('botButtons').style.borderColor='#5f2';
 	document.getElementById('upgrade').style.backgroundColor='#5f2';
-	
+	document.getElementById('title').innerHTML='Bounciness';
+	document.getElementById('level').innerHTML='Lvl '+Game.Bounciness.Level;
+	document.getElementById('desc').innerHTML='Your bounciness is increased by <i>'+Game.Bounciness.Grade+'</i>%';
+	document.getElementById('upgrade').getElementsByTagName('i')[0].innerHTML=Game.Bounciness.UpCost;
 }
 function income(e){
 	document.getElementById('botButtons').style.borderColor='#ffd700';
 	document.getElementById('upgrade').style.backgroundColor='#ffd700';
-	
+	document.getElementById('title').innerHTML='Income';
+	document.getElementById('level').innerHTML='Lvl '+Game.Income.Level;
+	document.getElementById('desc').innerHTML='Your income is increased by <i>'+Game.Income.Grade+'</i>%';
+	document.getElementById('upgrade').getElementsByTagName('i')[0].innerHTML=Game.Income.UpCost;
 }
-function upgrade(e){
-	
+function notifier(n){
+	if(n>9){
+		document.getElementById('buttonNotification').innerHTML='&#'+(10121+n).toString()+';&#x2b;';
+	}else{
+		document.getElementById('buttonNotification').innerHTML='&#'+(10121+n).toString()+';';
+	}
+	document.getElementById('buttonNotification').style.display='block';
+}
+function unNotifier(){
+	document.getElementById('buttonNotification').style.display='none';
 }
